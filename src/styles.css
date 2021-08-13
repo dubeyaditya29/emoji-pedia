@@ -1,0 +1,21 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: whitesmoke;
+}
+input {
+  padding: 1rem;
+  border-color: blue;
+  width: 70%;
+  text-align: center;
+}
+h2 {
+  color: blue;
+}
+.face-btn {
+  display: flex;
+  justify-content: center;
+}
