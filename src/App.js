@@ -11,13 +11,18 @@ export default function App() {
     "😉": "Winking Face",
     "😍": "Smiling Face with Heart-Eyes"
   };
-  const [emojiDesc, setEmojiDesc] = useState("");
 
+  var imagesWeKnow = Object.keys(emojiDictionary);
+  const [emojiDesc, setEmojiDesc] = useState("");
+  const [clickableEmoji, setClickableEmoji] = useState("");
   const imageChangeHandler = (event) => {
     var img = event.target.value;
-    emojiDictionary[img]
-      ? setEmojiDesc(emojiDictionary[img])
-      : setEmojiDesc("This emoji is not in the DB");
+    setEmojiDesc(emojiDictionary[img]);
+  };
+
+  const clickImageChangeHandler = (event) => {
+    var selectedImg = event.target.innerText;
+    setClickableEmoji(emojiDictionary[selectedImg]);
   };
 
   return (
@@ -31,6 +36,24 @@ export default function App() {
       </h1>
       <input onChange={imageChangeHandler} />
       <h2>{emojiDesc}</h2>
+
+      <h2>Emojis we already know</h2>
+      {imagesWeKnow.map((emoji) => {
+        return (
+          <span
+            key={emoji}
+            onClick={clickImageChangeHandler}
+            style={{
+              fontSize: "2rem",
+              padding: "0.5rem",
+              cursor: "pointer"
+            }}
+          >
+            {emoji}
+          </span>
+        );
+      })}
+      <h2>{clickableEmoji}</h2>
     </div>
   );
 }
