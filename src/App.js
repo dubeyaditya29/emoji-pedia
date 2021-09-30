@@ -9,7 +9,12 @@ export default function App() {
     "🤣": "Rolling on the Floor Laughing",
     "🙂": "Slightly Smiling Face",
     "😉": "Winking Face",
-    "😍": "Smiling Face with Heart-Eyes"
+    "😍": "Smiling Face with Heart-Eyes",
+    "😜": "Winking Face with Tongue",
+    "🤑": "Money-Mouth Face",
+    "😐": "Neutral Face",
+    "🙄": "Face with Rolling Eyes",
+    "😬": "Grimacing Face"
   };
 
   var imagesWeKnow = Object.keys(emojiDictionary);
